@@ -22,7 +22,7 @@ RUN cd /tmp && \
         https://api.github.com/repos/theotherp/nzbhydra2/releases \
         | awk '/tag_name/{print $4;exit}' FS='[""]') && \
     curl -qsSL -o /tmp/nzbhydra2.zip \
-    https://github.com/theotherp/nzbhydra2/releases/download/${TAG}/nzbhydra2-${TAG#v}-linux.zip && \
+    https://github.com/theotherp/nzbhydra2/releases/download/v1.4.3/nzbhydra2-1.4.3-linux.zip && \
     mkdir -p /opt/nzbhydra2 && \
     cd /opt/nzbhydra2 && \
     unzip -q /tmp/nzbhydra2.zip && \
