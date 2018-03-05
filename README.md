@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/mattsch/fedora-nzbhydra2.svg?branch=master)](https://travis-ci.org/mattsch/fedora-nzbhydra2)
 # Fedora NZBHydra2 Docker Container
 
 Docker container for [NZBHydra2](https://github.com/theotherp/nzbhydra2) using Fedora.
@@ -20,3 +21,8 @@ docker create -v /path/to/config/dir:/config \
     -e LUID=1234 -e LGID=1234 \
     -p 5075:5075 --name=nzbhydra2 mattsch/fedora-nzbhydra2
 ```
+
+## Tags
+
+Tags should follow upstream releases (including prereleases) and latest should
+be the latest built.

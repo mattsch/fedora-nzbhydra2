@@ -1,5 +1,6 @@
 FROM mattsch/fedora-rpmfusion:latest
 MAINTAINER Matthew Schick <matthew.schick@gmail.com>
+ARG upstream_tag=v1.4.5
 
 # Install required packages
 RUN dnf install -yq java-1.8.0-openjdk-headless \
@@ -18,11 +19,8 @@ RUN groupadd -g $LGID nzbhydra2 && \
 
 # Grab the installer, do the thing
 RUN cd /tmp && \
-    export TAG=$(curl -qsX GET \
-        https://api.github.com/repos/theotherp/nzbhydra2/releases \
-        | awk '/tag_name/{print $4;exit}' FS='[""]') && \
     curl -qsSL -o /tmp/nzbhydra2.zip \
-    https://github.com/theotherp/nzbhydra2/releases/download/${TAG}/nzbhydra2-${TAG#v}-linux.zip && \
+    https://github.com/theotherp/nzbhydra2/releases/download/${upstream_tag}/nzbhydra2-${upstream_tag#v}-linux.zip && \
     mkdir -p /opt/nzbhydra2 && \
     cd /opt/nzbhydra2 && \
     unzip -q /tmp/nzbhydra2.zip && \
@@ -38,5 +36,3 @@ COPY run-nzbhydra2.sh /bin/run-nzbhydra2.sh
 
 # Run our script
 CMD ["/bin/run-nzbhydra2.sh"]
-
-
