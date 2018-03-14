@@ -6,7 +6,7 @@ services:
 env:
   global:
   - IMG_NAME="docker.io/mattsch/fedora-nzbhydra2"
-  - VER="v1.4.6"
+  - VER="v1.4.7"
 
 script:
   - 'docker login -u "$D_U" -p "$D_P"'
