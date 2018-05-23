@@ -1,6 +1,6 @@
 FROM mattsch/fedora-rpmfusion:latest
 MAINTAINER Matthew Schick <matthew.schick@gmail.com>
-ARG upstream_tag=v1.4.5
+ARG upstream_tag=v1.4.18
 
 # Install required packages
 RUN dnf install -yq java-1.8.0-openjdk-headless \
