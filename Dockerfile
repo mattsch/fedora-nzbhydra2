@@ -1,5 +1,5 @@
-FROM mattsch/fedora-rpmfusion:latest
-MAINTAINER Matthew Schick <matthew.schick@gmail.com>
+FROM mattsch/fedora-rpmfusion:28
+LABEL maintainer="Matthew Schick <matthew.schick@gmail.com>"
 ARG upstream_tag=v1.4.18
 
 # Install required packages
