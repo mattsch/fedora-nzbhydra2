@@ -1,6 +1,6 @@
 FROM mattsch/fedora-rpmfusion:28
 LABEL maintainer="Matthew Schick <matthew.schick@gmail.com>"
-ARG upstream_tag=v1.4.18
+ARG upstream_tag=v2.0.1
 
 # Install required packages
 RUN dnf install -yq java-1.8.0-openjdk-headless \
